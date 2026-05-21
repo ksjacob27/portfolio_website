@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ksjacob27.github.io/al-folio/sitemap.xml
+Sitemap: https://ksjacob27.github.io/portfolio_website/sitemap.xml
