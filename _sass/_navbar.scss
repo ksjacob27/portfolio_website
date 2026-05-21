@@ -116,6 +116,8 @@
 }
 
 .navbar-toggler {
+  display: none !important;
+
   .icon-bar {
     display: block;
     width: 22px;
@@ -152,6 +154,12 @@
 
   .bottom-bar {
     transform: rotate(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-toggler {
+    display: block !important;
   }
 }
 
