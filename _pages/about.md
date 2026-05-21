@@ -9,7 +9,6 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Kevin Jacob</p>
     <p><a href="tel:+17204197450">720-419-7450</a></p>
     <p><a href="mailto:ksjacob27@gmail.com">ksjacob27@gmail.com</a></p>
 
@@ -35,4 +34,4 @@ This focus builds on internships at Emergetech, Expedia Group, and OptIn, where 
 
 Outside of engineering, I am a dedicated photographer. I specialize in portrait and nature photography, and I regularly photograph graduation sessions, cultural events, and celebrations. This creative practice complements my technical work, balancing the structured problem-solving of software with a more expressive, people-focused craft.
 
-The full details of my background are available on my [CV]({{ '/cv/' | relative_url }}). I welcome conversations about software, machine learning, photography, or new opportunities.
+The full details of my background are available on my [resume]({{ '/cv/' | relative_url }}). I welcome conversations about software, machine learning, photography, or new opportunities.

@@ -1,81 +1,58 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Multi-Agent Restaurant Review Analyzer
+description: An AutoGen pipeline of cooperating LLM agents that turns unstructured restaurant reviews into structured, aggregated ratings.
+img: assets/img/restaurant_reviewer.jpg
 importance: 2
 category: work
-giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Online restaurant reviews are free-form text — useful to read, but hard to compare at a glance.
+This project builds an **automated pipeline of cooperating LLM agents** that reads raw reviews,
+extracts structured quality signals, and produces a single aggregated rating per restaurant.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+It is built on Microsoft's [AutoGen](https://microsoft.github.io/autogen/) multi-agent framework,
+with **GPT-4o-mini** as the underlying model.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## How it works
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Rather than one monolithic prompt, the system splits the job across four specialized
+`ConversableAgent` instances, each responsible for one stage of the pipeline:
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+- **Entrypoint Agent** — orchestrates the run, executes functions, and routes data between agents.
+- **Data Fetch Agent** — parses the restaurant name out of the user query and calls
+  `fetch_restaurant_data()` to retrieve that restaurant's reviews.
+- **Review Analysis Agent** — reads each review and assigns a `food_score` and a
+  `customer_service_score` (1–5 each) using a fixed adjective-to-score mapping.
+- **Scoring Agent** — collects the paired scores and invokes `calculate_overall_score()` to
+  produce the final rating.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The 1–5 scale is anchored to descriptor keywords so scoring stays consistent across reviews — for
+example *awful/horrible/disgusting* → 1, *average/uninspiring/forgettable* → 3, and
+*awesome/incredible/amazing* → 5.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Scoring model
 
-{% raw %}
+Individual review scores are aggregated with a formula that rewards restaurants strong in **both**
+food and service, rather than letting one dimension mask a weak one:
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+$$
+\text{score} = \left( \frac{1}{N\sqrt{125}} \sum_{i=1}^{N} \sqrt{\text{food}_i^{\,2} \times \text{service}_i} \right) \times 10
+$$
 
-{% endraw %}
+The geometric-style combination means a restaurant with great food but poor service cannot coast
+on the food score alone, and the result is normalized to a clean 0–10 scale.
+
+## Tech stack
+
+Python · AutoGen (multi-agent orchestration) · OpenAI GPT-4o-mini
+
+## What I took away from it
+
+The project was a hands-on study in **agentic LLM design** — decomposing a task into narrowly
+scoped agents with clear hand-offs proved more reliable and debuggable than a single large prompt,
+since each agent can be tested and reasoned about in isolation.
+
+## Links
+
+- **Code:** [github.com/ksjacob27/restaurant_reviewer](https://github.com/ksjacob27/restaurant_reviewer)

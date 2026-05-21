@@ -1,80 +1,52 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: Autonomous Cybersecurity Defender
+description: An AI-powered network intrusion detection API that pairs rule-based classification with a pipeline of GPT-4o agents to detect threats and generate human-readable response plans.
 img:
-importance: 4
-category: fun
+importance: 6
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The Autonomous Cybersecurity Defender is a **network intrusion detection service** that combines
+fast rule-based classification with **LLM reasoning**. Instead of just flagging traffic as
+malicious, it explains _why_ — producing a human-readable threat assessment and a concrete
+response plan a defender could act on.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## How it works
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The system is a FastAPI service exposing a single `POST /predict` endpoint. It takes lightweight
+packet metadata — for example:
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+```json
+{ "packet_size": 500, "protocol": 2 }
 ```
 
-{% endraw %}
+and runs it through a pipeline of cooperating GPT-4o **agents**, each with one job:
+
+- **Traffic classifier agent** — makes the first call: is this traffic malicious or benign?
+- **Threat analyzer agent** — for malicious traffic, characterizes the likely attack vector
+  (e.g. a TCP/SYN flood) and assesses its severity.
+- **Response planner agent** — produces a simulated firewall action plus a multi-step mitigation
+  guide covering monitoring, rate limiting, access controls, and incident response.
+
+The response bundles all of this together — the classification `result`, the `threat_info`
+explanation, the `response_action`, and an ordered list of `response_steps` — so the output is
+not just a label but actionable guidance.
+
+## Design idea
+
+The project's core idea is **layered detection**: cheap, deterministic rules handle the obvious
+cases quickly, while LLM agents add the reasoning and clear explanations that rigid rule sets
+can't. Splitting the LLM work across narrowly scoped agents (classify → analyze → plan) keeps each
+step focused and the overall behavior easy to follow.
+
+## Tech stack
+
+Python · FastAPI · OpenAI GPT-4o · Docker · Thunder Client (VS Code API testing)
+
+The work draws on the [UNB CIC-IDS-2017](https://www.unb.ca/cic/datasets/ids-2017.html) intrusion
+detection dataset, and includes visualizations of packet-size and protocol correlations.
+
+## Links
+
+- **Code:** [github.com/ksjacob27/cybersecurity_defender](https://github.com/ksjacob27/cybersecurity_defender)

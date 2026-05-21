@@ -1,7 +1,7 @@
 ---
 layout: cv
 permalink: /cv/
-title: CV
+title: resume
 nav: true
 nav_order: 5
 cv_pdf: /assets/pdf/kevin_jacob_swe.pdf # you can also use external links here

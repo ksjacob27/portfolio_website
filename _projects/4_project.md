@@ -1,80 +1,48 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: AudioDB Music Explorer
+description: A containerized full-stack web app for searching artists and leaving reviews, backed by a PostgreSQL database and the TheAudioDB API.
+img: assets/img/audiodb.jpg
+importance: 4
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+AudioDB Music Explorer is a **full-stack, containerized web application** for discovering music
+artists. Search for any artist, browse their profile pulled live from a public music API, and
+leave reviews that persist in a database — the whole thing packaged to spin up with a single
+Docker command.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## What it does
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **Artist search** — Enter an artist name and the app queries [TheAudioDB](https://www.theaudiodb.com/)
+  API, then renders a profile with the artist's biography, genre, year of formation, official
+  website, and banner image.
+- **Artist reviews** — Visitors can write reviews tied to an artist; reviews are stored in a
+  PostgreSQL `artistReviews` table with the artist name, review text, and date.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Architecture
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+The app is a classic server-rendered web stack, fully containerized:
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- **Backend** — A Node.js / Express server (`server.js`) exposes the routes: a home page, an
+  artist-search endpoint that calls the external API via `axios`, and review create/read endpoints.
+- **Frontend** — EJS templates render pages server-side, populated with artist data and reviews.
+- **Database** — PostgreSQL, accessed through `pg-promise`, with an initialization script that
+  sets up the schema on first run.
+- **Deployment** — A `Dockerfile` and `docker-compose.yml` orchestrate the app and database
+  together, so the full environment comes up reproducibly with `docker compose up`. A Heroku
+  deployment configuration is also included.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Tech stack
 
-{% raw %}
+Node.js · Express · EJS · PostgreSQL · pg-promise · axios · Docker · Docker Compose · TheAudioDB API
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## What I took away from it
 
-{% endraw %}
+This project tied together the pieces of a real deployable web service — an external API
+integration, a relational database with its own schema and init scripts, server-side rendering,
+and reproducible multi-container packaging with Docker Compose.
+
+## Links
+
+- **Code:** [github.com/ksjacob27/audiodb](https://github.com/ksjacob27/audiodb)
