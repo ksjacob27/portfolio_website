@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Software Engineer focused on applied AI and multi-agent systems · M.S. in Computer Science, <a href='https://www.ucdenver.edu/'>University of Colorado Denver</a>.
+subtitle: Software Engineer focused on applied AI and multi-agent systems · M.S. in Computer Science, <a href='https://www.ucdenver.edu/'>University of Colorado Denver</a> · AWS AI Certified
 
 profile:
   align: right
