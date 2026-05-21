@@ -16,15 +16,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/portfolio_website/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/portfolio_website/repositories/";
-          },
-        },{id: "nav-cv",
-          title: "CV",
+        },{id: "nav-resume",
+          title: "resume",
           description: "Resume and background for Kevin Jacob — software engineer and computer science graduate student. Use the PDF icon above to download a copy.",
           section: "Navigation",
           handler: () => {
@@ -409,51 +402,36 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-f1-pit-stop-strategy-optimizer",
+          title: 'F1 Pit Stop Strategy Optimizer',
+          description: "A deep learning system that recommends Formula 1 pit stop windows from publicly available lap data — competitive with tools that normally require proprietary team telemetry.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-multi-agent-restaurant-review-analyzer",
+          title: 'Multi-Agent Restaurant Review Analyzer',
+          description: "An AutoGen pipeline of cooperating LLM agents that turns unstructured restaurant reviews into structured, aggregated ratings.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-song-lyric-analyzer",
+          title: 'Song Lyric Analyzer',
+          description: "A collaborative NLP project that predicts a song&#39;s commercial success, classifies its emotion and genre, and generates original lyrics — culminating in a fully produced track.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-audiodb-music-explorer",
+          title: 'AudioDB Music Explorer',
+          description: "A containerized full-stack web app for searching artists and leaving reviews, backed by a PostgreSQL database and the TheAudioDB API.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-minigit-version-control-from-scratch",
+          title: 'MiniGit — Version Control from Scratch',
+          description: "A simplified, Git-like version control system built in C++ from first principles, using hand-implemented linked lists to track files and commit history.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-autonomous-cybersecurity-defender",
+          title: 'Autonomous Cybersecurity Defender',
+          description: "An AI-powered network intrusion detection API that pairs rule-based classification with a pipeline of GPT-4o agents to detect threats and generate human-readable response plans.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/portfolio_website/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/portfolio_website/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/portfolio_website/projects/9_project/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
