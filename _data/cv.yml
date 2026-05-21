@@ -1,189 +1,119 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Kevin Jacob
+  label: Software Engineer
+  email: ksjacob27@gmail.com
+  phone: 720-419-7450
+  location: Denver, CO
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: ksjacob27
     - network: LinkedIn
-      username: example
+      username: kevin-jacob-010595264
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
+    city: Denver
+    region: Colorado
     countryCode: US
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: University of Colorado Denver
+        location: Denver, CO
+        area: Computer Science
+        studyType: Master of Science
+        start_date: 2024
+        end_date: 2026
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Expected graduation: May 2026"
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
+      - institution: University of Colorado Boulder
+        location: Boulder, CO
+        area: Computer Science
+        studyType: Bachelor of Science
+        start_date: 2020
+        end_date: 2024
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Emergetech Business Solutions Inc.
+        position: Software Developer Intern
+        start_date: 2024
+        end_date: 2024
         highlights:
-          - Relativity
-          - Description 2.
+          - "Improved customer response quality by integrating the OpenAI API into a call center platform to generate AI-powered real-time scripts, reducing agent handle time by enabling automated prompt-driven assistance across a full-stack Spring Boot and React application."
+          - "Enhanced management reporting capabilities by building a dynamic SQL query builder that filtered and aggregated records across large datasets using tag-based logic, reducing manual data analysis time through automated query generation."
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Expedia Group
+        position: Capstone Member
+        start_date: 2023
+        end_date: 2024
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Accelerated listing quality improvement for VRBO property managers by building an end-to-end AI-powered recommendation platform, delivering automated scoring across hundreds of listings by combining web scraping, the OpenAI API, and LangChain prompt engineering deployed on AWS Lambda."
+          - "Improved recommendation accuracy by engineering and iteratively optimizing GPT prompts for structured score extraction, reducing inconsistent model outputs through systematic evaluation and refinement of the LangChain pipeline."
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: OptIn Inc.
+        position: Applications Developer Intern
+        start_date: 2023
+        end_date: 2023
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - "Reduced scheduling conflicts for an employee portal by building a constraint-based predictive scheduling engine in Python and Django using Google OR-Tools, automating shift assignments across hundreds of workers by modeling labor demands and availability as an optimization problem."
+          - "Improved algorithm reliability by leading end-to-end testing and constraint validation, catching edge case failures through systematic unit testing before production deployment."
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+      - company: University of Colorado
+        position: "Teaching Assistant — Algorithms, Database Systems, Intro to Programming"
+        start_date: 2023
+        highlights:
+          - "Improved student comprehension across three courses by conducting weekly office hours for 100+ students, accelerating understanding of complex algorithms and data structures by debugging code in real time and translating technical concepts into accessible explanations."
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Languages
+        icon: fa-solid fa-code
+        keywords: "Python, Java, C++, C#, TypeScript, JavaScript, SQL, Scala, C"
 
-    Languages:
-      - name: German
-        summary: "Native speaker"
+      - name: "Frameworks & Libraries"
+        icon: fa-solid fa-layer-group
+        keywords: "Spring Boot, FastAPI, Django, Node.js, LangChain, NumPy, Pandas, Scikit-learn, TensorFlow, HuggingFace, Axios"
 
-      - name: English
-        summary: "Fluent"
+      - name: "Cloud & DevOps"
+        icon: fa-solid fa-cloud
+        keywords: "AWS (Lambda, S3), Docker, Git, CI/CD, Agile, Jira, Postman"
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Databases
+        icon: fa-solid fa-database
+        keywords: "MongoDB, MySQL, Cassandra, SQL"
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: F1 Pit Stop Strategy Optimizer
+        summary: "Python, PyTorch, GRU, Scikit-learn, FastF1 API"
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - "Achieved 52.5% pit stop strategy accuracy across 122 race-driver combinations from the 2024 F1 season by designing a compound-specific GRU deep learning system trained on 28,000+ lap sequences from 2022-2023 race data, representing a +21.5% improvement over the brute-force baseline."
+          - "Improved tire degradation prediction accuracy by 40% over the moving average baseline by engineering a lap-to-lap delta prediction target, building a full data pipeline on the FastF1 API with per-race MinMax normalization, and conducting five ablation experiments across nine model configurations to identify the optimal architecture."
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: AI Cybersecurity Defender
+        summary: "Python, FastAPI, GPT-4o, LangChain, CICIDS2017"
+        highlights:
+          - "Achieved 94% network threat detection accuracy by designing a production-grade AI agent using GPT-4o and FastAPI, combining a rule-based classification engine with an LLM-driven reasoning pipeline to detect intrusions in real time across the CICIDS2017 benchmark dataset."
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Lyric Analyzer
+        summary: "Python, Scikit-learn, TensorFlow, HuggingFace, Spotify API"
+        highlights:
+          - "Improved song classification accuracy by building a full ML pipeline from data ingestion to deployment, training an SVM classifier with TF-IDF feature extraction on Spotify API data and fine-tuning a feedforward neural network for generative lyric extension across genre-specific corpora."
+
+      - name: Conference Room Booking Application
+        summary: "Java, Spring Boot, Thymeleaf, MySQL, Bootstrap"
+        highlights:
+          - "Improved booking reliability for a multi-user scheduling system by building a full-stack Java/Spring Boot application, implementing OOP design patterns (Decorator, Factory, Singleton, Observer) and owning the MySQL database repository layer for user, room, and booking data."
+
+      - name: Music Database
+        summary: "Node.js, MySQL, Axios, Mocha, Chai"
+        highlights:
+          - "Increased data retrieval reliability for a full-stack music search application by integrating the AudioDB API via Axios and implementing comprehensive unit and integration tests through Mocha and Chai, validating correctness of all API responses and database queries."
+
+    Certificates:
+      - name: AWS Certified AI Practitioner
+        date: 2025
+        issuer: Amazon Web Services
+        icon: fa-solid fa-award
+
+    Relevant Coursework:
+      - bullet: "Machine Learning, Natural Language Processing, Algorithms, Database Systems, Operating Systems, Artificial Intelligence, Advanced Data Science, Cybersecurity, Object-Oriented Analysis and Design, Human Computer Interaction"

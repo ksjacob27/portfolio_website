@@ -4,9 +4,9 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
+cv_pdf: /assets/pdf/kevin_jacob_swe.pdf # you can also use external links here
 cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+description: Resume and background for Kevin Jacob — software engineer and computer science graduate student. Use the PDF icon above to download a copy.
 toc:
   sidebar: left
 ---
