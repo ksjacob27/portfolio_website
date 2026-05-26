@@ -9,8 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><a href="tel:+17204197450">720-419-7450</a></p>
     <p><a href="mailto:ksjacob27@gmail.com">ksjacob27@gmail.com</a></p>
+    <p><a href="tel:+17204197450">720-419-7450</a></p>
+
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
