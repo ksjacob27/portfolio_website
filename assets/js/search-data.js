@@ -432,6 +432,16 @@ ninja.data = [{
           description: "An AI-powered network intrusion detection API that pairs rule-based classification with a pipeline of GPT-4o agents to detect threats and generate human-readable response plans.",
           section: "Projects",handler: () => {
               window.location.href = "/portfolio_website/projects/6_project/";
+            },},{id: "projects-movie-recommendation-agent",
+          title: 'Movie Recommendation Agent',
+          description: "An Agno-powered multi-agent system that researches current movies with live web search and recommends personalized picks using GPT-4o, deployed as a full-stack app on AWS.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio_website/projects/7_project/";
+            },},{id: "projects-mff-calculator",
+          title: 'MFF Calculator',
+          description: "A small full-stack web calculator that computes in-game gold costs for Marvel Future Fight&#39;s BAM and CCF upgrade systems.",
+          section: "Projects",handler: () => {
+              window.location.href = "/portfolio_website/projects/8_project/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
