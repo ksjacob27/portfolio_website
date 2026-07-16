@@ -478,7 +478,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/portfolio_website/assets/pdf/kevin_jacob_resume.pdf", "_blank");
+          window.open("/portfolio_website/assets/pdf/kevin_jacob_resume_main.pdf", "_blank");
         },
       },{
       id: 'light-theme',
